@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
+  height: 100vh;
+  background-color: #020230;
+  color: goldenrod;
+}
+.image {
+  width: 75%;
+  background: url("./assets/bg.jpg");
+}
+
+.moneySection {
+  width: 25%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.moneyList {
+  list-style: none;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.moneyListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.moneyListItem.active{
+    /* border:10px solid goldenrod; */
+    color: white;
+    font-weight: 700 !important; 
+}
+
+.moneyListItemNumber {
+    font-size: 18px;
+    font-weight: 100;
+    width: 30%;
+}
+
+
+.moneyListItemAmount {
+    font-size: 20px;
+    /* font-weight: 300; */
 }
