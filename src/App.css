@@ -116,10 +116,10 @@
   color: white;
 }
 
-.answers .correct {
+.answer.correct {
   background: green;
 }
 
-.answers .wrong {
+.answer.wrong {
   background: red;
 }
