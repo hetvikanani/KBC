@@ -1,10 +1,12 @@
 import { useState } from "react";
-import "./app.css";
+import "./App.css";
+import Timer from "./Components/Timer";
 import Trivia from "./Components/Trivia";
 
 function App() {
-  const [queNum, setQueNum] = useState(1);
-  const [timeOut, setTimeOut] = useState(false)
+  const [queNum, setQueNum] = useState(0);
+  const [timeOut, setTimeOut] = useState(false);
+  const [earned, setEarned] = useState(0);
 
   const priceList = [
     { id: 16, price: "7 Crore" },
@@ -75,10 +77,25 @@ function App() {
   return (
     <div className="app">
       <div className="image">
-        <div className="top">
-          <div className="timer"> 30</div>
-        </div>
-        <div className="bottom"> <Trivia data={questionsData} timer={timeOut} question={queNum} /></div>
+        {timeOut ? (
+          <h1 className="endText">You Earned: {earned}</h1>
+        ) : (
+          <>
+            <div className="top">
+              <div className="timer">
+                <Timer timeout={setTimeOut} question={queNum} />
+              </div>
+            </div>
+            <div className="bottom">
+              <Trivia
+                data={questionsData}
+                timer={setTimeOut}
+                question={queNum}
+                setQuestion={setQueNum}
+              />
+            </div>
+          </>
+        )}
       </div>
       <div className="moneySection">
         <ul className="moneyList">
